@@ -1,0 +1,108 @@
+/* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+.row.content {
+	height: 1500px
+}
+
+/* Set gray background color and 100% height */
+.sidenav {
+	background-color: #f1f1f1;
+	height: 100%;
+}
+
+/* Set black background color, white text and some padding */
+footer {
+	background-color: #555;
+	color: white;
+	padding: 15px;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+	.sidenav {
+		height: auto;
+		padding: 15px;
+	}
+	.row.content {
+		height: auto;
+	}
+}
+</style>
+<style>
+body, input {
+	font-family: Calibri, Arial;
+	margin: 0px;
+	padding: 0px;
+}
+
+#header h2 {
+	color: white;
+	background-color: #3275A8;
+	height: 50px;
+	padding: 5px 0 0 5px;
+	font-size: 20px;
+	text-align: center
+}
+
+#message {
+	text-align: center;
+	font-size: 16px;
+	display: flex;
+	float: left;
+}
+#link {
+	float: right;
+}
+
+#booksLentTable {
+	border: 1px solid #143;
+	border-collapse: collapse;
+	width: 400px;
+	max-width: 100%;
+	font-family: Calibri;
+}
+.datatable {
+	margin-bottom: 5px;
+	border: 1px solid #eee;
+	border-collapse: collapse;
+	width: 500px;
+	max-width: 100%;
+	font-family: Calibri
+}
+
+.datatable th {
+	padding: 3px;
+	border: 1px solid #888;
+	height: 30px;
+	background-color: #B2D487;
+	text-align: center;
+	vertical-align: middle;
+	color: #444444
+}
+
+.datatable tr {
+	border: 1px solid #888
+}
+
+.datatable tr.odd {
+	background-color: #eee
+}
+
+.datatable td {
+	padding: 2px;
+	border: 1px solid #888
+}
+
+#content {padding 5px;
+	margin: 5px;
+	text-align: center
+}
+
+fieldset {
+	width: 300px;
+	padding: 5px;
+	margin-bottom: 0px;
+}
+
+legend {
+	font-weight: bold;
+}

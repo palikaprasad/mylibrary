@@ -8,6 +8,11 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 import au.com.ppalika.mylibrary.config.SpringRootConfig;
 import au.com.ppalika.mylibrary.config.SpringWebConfig;
 
+/**
+ * @author ppalika
+ * 
+ * This will be initialize Dispatcher Servlet using annotations.
+ */
 public class LibraryWebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
 	@Override

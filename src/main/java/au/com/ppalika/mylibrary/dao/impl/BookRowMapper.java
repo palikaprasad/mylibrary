@@ -7,7 +7,11 @@ import org.springframework.jdbc.core.RowMapper;
 
 import au.com.ppalika.mylibrary.model.Book;
 
-
+/**
+ * @author ppalika
+ * 
+ * Implementation of Row mapper of Book entity to Book model.
+ */
 public class BookRowMapper implements RowMapper<Book> {
 	//Rowmapper for boos table to DAO
 	public Book mapRow(ResultSet rs, int rowNum) throws SQLException {

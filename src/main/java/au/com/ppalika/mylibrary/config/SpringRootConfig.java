@@ -8,6 +8,12 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
+/**
+ * @author ppalika
+ * 
+ * This will be adding jdbc datasource and template
+ * to Bean Repository using spring injections
+ */
 @ComponentScan({"au.com.ppalika.mylibrary"})
 @Configuration
 public class SpringRootConfig {

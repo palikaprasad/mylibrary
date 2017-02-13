@@ -11,6 +11,13 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 
+
+/**
+ * @author ppalika
+ * 
+ * This will be adding view resolvers(JSP and JSON), resource handler
+ * to Bean Repository using spring injections
+ */
 @EnableWebMvc
 @Configuration
 @ComponentScan({"au.com.ppalika.mylibrary"})
@@ -19,6 +26,8 @@ public class SpringWebConfig extends WebMvcConfigurerAdapter {
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+		registry.addResourceHandler("/js/**").addResourceLocations("/js/");
+		registry.addResourceHandler("/css/**").addResourceLocations("/css/");
 	}
 
 	@Bean

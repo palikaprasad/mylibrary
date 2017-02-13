@@ -22,7 +22,11 @@ import au.com.ppalika.mylibrary.model.Book;
 import au.com.ppalika.mylibrary.model.Member;
 import au.com.ppalika.mylibrary.model.MemberBooks;
 
-
+/**
+ * @author ppalika
+ * 
+ * Main Controller for handling all incoming requests.
+ */
 @Controller
 public class SpringController {
 	
@@ -35,13 +39,23 @@ public class SpringController {
 	@Autowired
 	MembersDAOImpl membersDAO;
 	
-	
+	/**
+	 * 
+	 * @param locale
+	 * @param model
+	 * @return redirect path
+	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		return "redirect:/books";
 	}
 	
-	
+	/**
+	 * 
+	 * @param model
+	 * @return model after populating the view and attributes
+	 * @throws IOException
+	 */
 	@RequestMapping(value = "/books", method = RequestMethod.GET)
 	public ModelAndView listBooks(ModelAndView model) throws IOException{
 		
@@ -56,6 +70,12 @@ public class SpringController {
 		return model;
 	}
 	
+	/**
+	 * 
+	 * @param model
+	 * @return model after populating the view and attributes
+	 * @throws IOException
+	 */
 	@RequestMapping(value = "/members", method = RequestMethod.GET)
 	public ModelAndView listMembers(ModelAndView model) throws IOException{
 		
@@ -70,10 +90,16 @@ public class SpringController {
 		return model;
 	}
 	
+	/**
+	 * 
+	 * @param model
+	 * @return response as JSON string.
+	 * @throws IOException
+	 */
 	@RequestMapping(value="/listBooks", params = "memberId",  method = RequestMethod.GET)
 	public ResponseEntity<MemberBooks>  listBooksJson(@RequestParam("memberId") String memberId) throws IOException{
 		
-		System.out.println("Retrieving books lent for memberId:" + memberId);
+		logger.info("Retrieving books lent for memberId:" + memberId);
 		MemberBooks memberBooks=membersDAO.getBooksByMemberId(memberId);
 		
 		return new ResponseEntity<MemberBooks>(memberBooks, HttpStatus.OK);

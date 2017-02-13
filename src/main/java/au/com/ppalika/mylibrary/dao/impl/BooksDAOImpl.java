@@ -11,6 +11,11 @@ import org.springframework.stereotype.Repository;
 import au.com.ppalika.mylibrary.dao.BooksDAO;
 import au.com.ppalika.mylibrary.model.Book;
 
+/**
+ * @author ppalika
+ * 
+ * Implementation of Books Entity DAO.
+ */
 @Repository
 public class BooksDAOImpl implements BooksDAO {
 	
@@ -21,6 +26,10 @@ public class BooksDAOImpl implements BooksDAO {
 		this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
 	}
 	
+	/**
+	 * 
+	 * @return List of all books from Database
+	 */
 	@Override
 	public List<Book> findAll() {
 		Map<String, Object> params = new HashMap<String, Object>();

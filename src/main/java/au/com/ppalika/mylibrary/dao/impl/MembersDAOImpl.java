@@ -11,6 +11,11 @@ import au.com.ppalika.mylibrary.model.Book;
 import au.com.ppalika.mylibrary.model.Member;
 import au.com.ppalika.mylibrary.model.MemberBooks;
 
+/**
+ * @author ppalika
+ * 
+ * Implementation of Member Entity DAO.
+ */
 @Repository
 public class MembersDAOImpl implements MembersDAO {
 	
@@ -21,6 +26,10 @@ public class MembersDAOImpl implements MembersDAO {
 		this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
 	}
 	
+	/**
+	 * 
+	 * @return List of all Members from Database
+	 */
 	@Override
 	public List<Member> findAll() {
 		String sql = "SELECT * FROM members";
@@ -28,6 +37,11 @@ public class MembersDAOImpl implements MembersDAO {
 		return result;
 	}
 
+	
+	/**
+	 * @param memeberId
+	 * @return all books lent by give member
+	 */
 	@Override
 	public MemberBooks getBooksByMemberId(String memberId) {
 		MemberBooks memberBooks=new MemberBooks();

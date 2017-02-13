@@ -7,7 +7,11 @@ import org.springframework.jdbc.core.RowMapper;
 
 import au.com.ppalika.mylibrary.model.Member;
 
-
+/**
+ * @author ppalika
+ * 
+ * Implementation of Row mapper of Member entity to Member model.
+ */
 public class MemberRowMapper implements RowMapper<Member> {
 	//Rowmapper for members table to DAO
 	public Member mapRow(ResultSet rs, int rowNum) throws SQLException {
