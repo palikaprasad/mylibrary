@@ -12,7 +12,9 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
 import au.com.ppalika.mylibrary.dao.impl.BooksDAOImpl;
+import au.com.ppalika.mylibrary.dao.impl.MembersDAOImpl;
 import au.com.ppalika.mylibrary.model.Book;
+import au.com.ppalika.mylibrary.model.Member;
 
 public class DataAccessUnitTestTemplate {
     private static EmbeddedDatabase db;
@@ -25,7 +27,7 @@ public class DataAccessUnitTestTemplate {
     }
 
     @Test
-    public void testBooList() {
+    public void testBookList() {
     	NamedParameterJdbcTemplate template = new NamedParameterJdbcTemplate(db);
     	BooksDAOImpl booksDAO = new BooksDAOImpl();
     	booksDAO.setNamedParameterJdbcTemplate(template);
@@ -35,6 +37,20 @@ public class DataAccessUnitTestTemplate {
     	Assert.assertNotNull(booksList);
     	for (Book book : booksList) {
     		Assert.assertNotNull(book);
+		}
+    }
+    
+    @Test
+    public void testMembersList() {
+    	NamedParameterJdbcTemplate template = new NamedParameterJdbcTemplate(db);
+    	MembersDAOImpl membersDAO = new MembersDAOImpl();
+    	membersDAO.setNamedParameterJdbcTemplate(template);
+    	
+    	List<Member> memberList=membersDAO.findAll();
+    	
+    	Assert.assertNotNull(memberList);
+    	for (Member member : memberList) {
+    		Assert.assertNotNull(member);
 		}
     }
 
